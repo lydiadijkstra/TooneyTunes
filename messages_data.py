@@ -130,8 +130,7 @@ def song_reply(song_options_according_to_mood):
     }
     song_tuple_choice = song_options_according_to_mood.pop(random.randrange(len(song_options_according_to_mood)))
     #one could still unpack the tuple and present it in a nicer way in the message
-    song_reply[
-        "message"] = "Thank you for sharing your mood - here is your Song for today: " + f"{song_tuple_choice} " + "!!!"
+    song_reply["message"] = "Thank you for sharing your mood - here is your Song for today: " + f"{song_tuple_choice} " + "!!!"
 
     # sending the final message
     url_sending_sms = "http://hackathons.masterschool.com:3030/sms/send"
