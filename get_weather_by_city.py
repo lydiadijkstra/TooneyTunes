@@ -1,4 +1,5 @@
 import requests
+from send_retrieve_city import retrieve_city_after_user_reply
 
 
 def get_weather_info(city_name):
@@ -31,28 +32,30 @@ def get_weather_info(city_name):
         }
 
         weather_data_dict[city_name] = weather_dict
-        print(f"The weather is {weather_desc}, we have this music suggestion: ")
+        print(f"The weather is {weather_desc}")
         return weather_desc
 
     else:
         return "City not found or API request failed."
 
 
-def weather_type(weather_description):
-    if weather_description.lower() == "clear" or weather_description.lower() == "sunny":
-        return "sunny"
-    elif weather_description.lower() == "clouds" or weather_description.lower() == "rain" or\
-            weather_description.lower() == "smoke" or weather_description.lower() == "mist":
-        return "cloudy"
-    else:
-        return "other"
+# def weather_type(weather_description):
+#     if weather_description.lower() == "clear" or weather_description.lower() == "sunny":
+#         return "sunny"
+#     elif weather_description.lower() == "clouds" or weather_description.lower() == "rain" or\
+#             weather_description.lower() == "smoke" or weather_description.lower() == "mist":
+#         return "cloudy"
+#     else:
+#         return "other"
 
 
-def main():
-    city_name = "berlin"
-    weather_description = get_weather_info(city_name)
-    weather_type(weather_description)
-
-
-if __name__ == "__main__":
-    main()
+# def main():
+#
+#     phone_number = "4915566355818"
+#     city_name = retrieve_city_after_user_reply(phone_number)
+#
+#     print(get_weather_info(city_name))
+#
+#
+# if __name__ == "__main__":
+#     main()
